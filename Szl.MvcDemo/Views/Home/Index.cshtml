@@ -1,0 +1,13 @@
+﻿@model Szl.MvcDemo.Controllers.IndexModel
+
+<h2>@Model.Message</h2>
+
+<ul>
+    @foreach (var guid in Model.Guids)
+    {
+        <li>@guid</li>
+    }
+</ul>
+<div>
+    @Html.ActionLink("To The Wizard!", "Route", "Route")
+</div>

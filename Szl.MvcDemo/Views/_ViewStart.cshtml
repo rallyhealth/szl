@@ -1,0 +1,10 @@
+﻿@{
+    if (ViewContext.Controller.ViewData.ContainsKey("IsIndex"))
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_StepsLayout.cshtml";
+    }
+}
