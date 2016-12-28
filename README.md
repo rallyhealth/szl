@@ -9,3 +9,9 @@ A Szl configuration answers the following questions:
 - Given my context and that I am on State X, what state is Back?
 
 A Szl configuration is a pure function (data in, data out, no side effects) and is highly testable because they are composite in nature and can be nested.
+
+## Getting Started
+
+A reference Szl state machine implementation is provided in "Szl.MvcDemo" and "Szl.MvcDemo.Tests".
+
+More detailed setup instructions to come.
