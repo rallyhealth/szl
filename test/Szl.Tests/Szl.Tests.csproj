@@ -52,10 +52,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Demo\" />
-    <Folder Include="MvcDemo\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\..\src\Szl\Szl.csproj">
       <Project>{ab0b485c-6300-4248-aef4-bc5fa6345844}</Project>
