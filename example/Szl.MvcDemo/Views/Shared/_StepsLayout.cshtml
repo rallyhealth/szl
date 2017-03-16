@@ -1,0 +1,55 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var queryString = Html.ViewContext.RequestContext.HttpContext.Request.QueryString;
+    var simpleDictionary = new Dictionary<string, object>();
+    foreach (var k in queryString.AllKeys)
+    {
+        simpleDictionary[k] = queryString[k];
+    }
+    var queryDictionary = new RouteValueDictionary(simpleDictionary);
+}
+
+<div>
+    @using (Html.BeginForm(null, null, queryDictionary, FormMethod.Post, null))
+    {
+        @Html.Hidden("BackButtonClicked", false)
+        @RenderBody()
+    }
+</div>
+
+<style>
+    .current {
+        font-size: 20em;
+    }
+</style>
+
+<footer>
+    <div>
+        <span>
+            <button type="button" class="btn btn-default" onclick="back()">
+                Back
+            </button>
+        </span>
+        <span>
+            <button type="button" class="btn btn-default" onclick="next()">
+                Next
+            </button>
+        </span>
+    </div>
+</footer>
+
+<script>
+    function next() {
+        submit();
+    }
+
+    function submit() {
+        document.getElementsByTagName("form")[0].submit();
+    }
+
+    function back() {
+        document.getElementById("BackButtonClicked").value = true;
+        submit();
+    }
+</script>
