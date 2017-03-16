@@ -19,7 +19,7 @@ Congrats! You can now open and close nodes to your heart's desire. `ActionableSz
 
 To visualize a snapshot of the Szl that you're interested in, the steps are the same as above, but we need to use the JSON representation of the current Szl state. To get that:
 
-1. Get your enrolling Choice user in the right state that you want to test  
+1. Get your enrolling Choice user in the right state that you want to test
 2. Open Titanis/Spotlite.Web in Visual Studio
 3. Attach the Debugger
 4. In the Spotlite.Web `BaseController`, set a breakpoint at a part of the request lifecycle that you want to test. This is typically in `MoveSzl` or `OnActionExecuting`
@@ -28,18 +28,3 @@ To visualize a snapshot of the Szl that you're interested in, the steps are the 
   - If there's not a Szl state machine in scope, open the "Watch" window and add a watch for `GetStateMachine()`, drill down in to the result, then right click and "Copy Value" of the `_sizualization` property
 6. Paste the JSON as-is into the `data.json` file within the `Sizualization` directory.
 7. Follow the steps in "Viewing the Sizualization" above to start the web server or refresh the page if it's running to see the updated tree
-
-## I need help!
-
-If you need help or you have issues making Sizualizations, contact Ryan Stelly. He had a bit too much fun writing this. 
-
-Suggestions also welcome.
-
-## Roadmap
-
-- Make things less hideous
-- More specifically, make labels readable and not overlap
-- Visually distinguish `ActionableSzl`s
-- Consider dev-only overlay that gets optionally dumped into Choice Razor views
-  - Conditionally(?) throw the `GetStateMachine` result from "ShouldUserBeHere" in TempData
-  - Conditionally render Sizualization in a base layout

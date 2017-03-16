@@ -1,7 +1,6 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    
-    // Stolen from Spotlite.BaseController & Common.Utilities.DictionaryExtenions
+
     var queryString = Html.ViewContext.RequestContext.HttpContext.Request.QueryString;
     var simpleDictionary = new Dictionary<string, object>();
     foreach (var k in queryString.AllKeys)
@@ -12,7 +11,6 @@
 }
 
 <div>
-    @*yup, this is what spotlite does*@
     @using (Html.BeginForm(null, null, queryDictionary, FormMethod.Post, null))
     {
         @Html.Hidden("BackButtonClicked", false)

@@ -1,5 +1,4 @@
-﻿using System.Web.Mvc;
-using System.Web.Routing;
+﻿using System.Web.Routing;
 
 namespace Szl.MvcDemo
 {
@@ -7,7 +6,6 @@ namespace Szl.MvcDemo
     {
         protected void Application_Start()
         {
-            AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
     }

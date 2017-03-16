@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{012C5D0A-52E0-4936-AF79-A81F171550B3}</ProjectGuid>
+    <ProjectGuid>{E2F0B4C5-A661-4C79-AB82-49BD2E0FBD50}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Szl.Tests</RootNamespace>
-    <AssemblyName>Szl.Tests</AssemblyName>
+    <RootNamespace>Szl.MvcDemo.Tests</RootNamespace>
+    <AssemblyName>Szl.MvcDemo.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -45,29 +45,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BoundActionTests.cs" />
-    <Compile Include="ExtensionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StateMachineTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Demo\" />
-    <Folder Include="MvcDemo\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Szl\Szl.csproj">
-      <Project>{AB0B485C-6300-4248-AEF4-BC5FA6345844}</Project>
+    <ProjectReference Include="..\..\src\Szl\Szl.csproj">
+      <Project>{ab0b485c-6300-4248-aef4-bc5fa6345844}</Project>
       <Name>Szl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Szl.MvcDemo\Szl.MvcDemo.csproj">
+      <Project>{3ecfbdec-95e1-4596-98db-a4fab10cd682}</Project>
+      <Name>Szl.MvcDemo</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
