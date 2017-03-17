@@ -6,6 +6,6 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Szl")]
 [assembly: AssemblyDescription("C# Routing state machine with ASP.NET MVC implementation")]
 [assembly: AssemblyCompany("Rally Health, Inc")]
-[assembly: AssemblyCopyright("Copyright © 2015 Rally Health, Inc")]
+[assembly: AssemblyCopyright("Copyright © 2017 Rally Health, Inc")]
 
 [assembly: ComVisible(false)]
