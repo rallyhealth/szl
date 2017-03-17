@@ -44,7 +44,7 @@ All implementations of `ISzl` are considered `Szl`s.
 
 ## `ActionableSzl`
 
-An implementation of `SzlBase` which represents a concrete applcation state (such as a step in a wizard).
+An implementation of `SzlBase` which represents a concrete application state (such as a step in a wizard).
 
 An `ActionableSzl` state has one `BoundAction` property which includes metadata about the MVC controller and action that are associated with the state. This is how the Szl state machine is mapped to a the states of an MVC application.
 
