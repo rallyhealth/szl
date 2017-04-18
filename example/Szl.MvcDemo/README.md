@@ -26,6 +26,6 @@ A container for the user's context. This is what drives the dynamic Szl states.
 
 `BaseController` is what ties Szl to the MVC application. All Szl-managed controllers inherit from `BaseController` and rely on `OnActionExecuting`, `Next`, and `Back` for navigation and preventing improper application state access.
 
-Following the [https://en.wikipedia.org/wiki/Post/Redirect/Get](Post/Redirect/Get) pattern of MVC applications, `POST` actions are responsible for redirecting to the next action. `Next` in the `BaseController` shifts the responsibility of figuring out where to go **from** the action itself **to** Szl. `Next` uses the `ControllerContext.RouteData` to determine the current controller and action and find the next `Szl` state and associated MVC action.
+Following the [Post/Redirect/Get](https://en.wikipedia.org/wiki/Post/Redirect/Get) pattern of MVC applications, `POST` actions are responsible for redirecting to the next action. `Next` in the `BaseController` shifts the responsibility of figuring out where to go **from** the action itself **to** Szl. `Next` uses the `ControllerContext.RouteData` to determine the current controller and action and find the next `Szl` state and associated MVC action.
 
 `OnActionExecuting` is an MVC lifecycle event that fires before an action is executed. Here, we assert that a user is allowed to access the action they're attempting. It created a `BoundAction` based on their attempted action, looks for the `Szl` state in the state machine, and if it's null, routes them elsewhere.
