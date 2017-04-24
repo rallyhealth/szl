@@ -12,7 +12,7 @@ A Szl configuration is a pure function (data in, data out, no side effects) and 
 
 # Motivation and Usage
 
-Rally Choice is an ASP.NET MVC application which walks a user through an Open Enrollment experience for employer-offered benefits. The main interaction is a walking the user through a detailed wizard. The application states vary widely based on what an employee is offered, what they are eligible for, and even within a product, the flow changes based on their dependents' information.
+Rally Choice is an ASP.NET MVC application which walks a user through an Open Enrollment experience for employer-offered benefits. The main interaction is walking the user through a detailed wizard. The application states vary widely based on what an employee is offered, what they are eligible for, and even within a product, the flow changes based on their dependents' information.
 
 Because this flow is very dynamic, it is no small effort to define all the possible states of an application can access, as well as answer the question "when a user is here, where should they go next?"
 
@@ -46,7 +46,7 @@ All implementations of `ISzl` are considered `Szl`s.
 
 An implementation of `SzlBase` which represents a concrete application state (such as a step in a wizard).
 
-An `ActionableSzl` state has one `BoundAction` property which includes metadata about the MVC controller and action that are associated with the state. This is how the Szl state machine is mapped to a the states of an MVC application.
+An `ActionableSzl` state has one `BoundAction` property which includes metadata about the MVC controller and action that are associated with the state. This is how the Szl state machine is mapped to the states of an MVC application.
 
 # Sample
 
@@ -89,7 +89,7 @@ public ISzl BuildStateMachine(bool, userIsLoggedIn, bool userIsAdmin = false)
 
 Now we have all we need to use our Szl state machine for routing. Here are a few scenarios:
 
-**Given the user just POSTed a form from "Step2" where should they go next?**
+**Given the user just POSTed a form from "Step2", where should they go next?**
 
 ```cs
 //Note: Explicit variable types used for demonstration
@@ -111,7 +111,7 @@ Console.WriteLine(nextBoundAction.Action); // "Step3"
 RedirectToAction(nextBoundAction.Controller, nextBoundAction.Action);
 ```
 
-**Given the user is not logged in, can they access "Step1"**
+**Given the user is not logged in, can they access "Step1"?**
 
 ```cs
 ISzl stateMachine = BuildStateMachine(userIsLoggedIn: false);
